@@ -1,0 +1,14 @@
+extends layout
+
+block layout-content
+  div.View.WelcomeView
+    h1.Banner WHATABYTE
+    div.Message
+      div.Title
+        h3 Sign in
+        form(action="/auth/signin" method="POST" name="signInForm")
+          input(id="username" name="username" placeholder="username")
+          br
+          input(id="password" name="password" placeholder="password")
+          br
+          input(type="submit" value="Sign in")

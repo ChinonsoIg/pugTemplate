@@ -1,0 +1,18 @@
+extends layout
+
+block layout-content
+	div.View.UserView
+		div.NavBar
+			div.Menu
+				ul
+					each value in nav
+						a(href=`${value.link}`)
+							li= value.name
+			h1 Banks
+		div.ListOfBanks
+			img(src=bank.image)
+			h1= bank.name
+			h3= bank.founder
+			h5= bank.motto
+			hr
+		div.Footer

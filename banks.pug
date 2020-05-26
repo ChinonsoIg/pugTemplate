@@ -1,0 +1,22 @@
+extends layout
+
+block layout-content
+	div.View.UserView
+		div.NavBar
+			div.Menu
+				ul
+					each value in nav
+						a(href=`${value.link}`)
+							li= value.name
+			h1 Banks
+		div.ListOfBanks
+			each val in banks
+				img(src= val.image alt=BankImage)
+				h3= val.name
+				h4 Locations: 
+					= val.locations
+				h5
+					a(href=`/banks/${val._id}`).
+						Read more...
+				hr
+		div.Footer

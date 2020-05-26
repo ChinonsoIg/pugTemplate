@@ -1,0 +1,15 @@
+extends layout
+
+block layout-content
+	div.View.UserView
+		div.NavBar
+			div.Menu
+				ul
+					each value in nav
+						a(href=`${value.link}`)
+							li= value.name
+			h1 Banks
+		div.Nno= title
+			p Feel free to explore the App. Hope you'll enjoy the experience
+			
+		div.Footer
