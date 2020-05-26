@@ -1,0 +1,26 @@
+extends layout
+
+block layout-content
+	div.View.UserView
+		div.NavBar
+			div.Menu
+				ul
+					each value in nav
+						a(href=`${value.link}`)
+							li= value.name
+			h1 Banks
+		div.ListOfBanks
+			div.SelectNav
+				div.ListOfSelect
+					h4 Please select a location from the dropdown beside:
+					select#SelectLocation(name="select")
+						each val in optionSelect
+							option(value=`${val.name}`)= val.name
+		div.Footer
+	script.
+		const select = document.getElementById('SelectLocation');
+		select.addEventListener("change", function(e) {
+			//- console.log(e.target.value);
+			return e.target.value
+		});
+		module.exports select;
